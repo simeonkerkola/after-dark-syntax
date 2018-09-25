@@ -10,7 +10,7 @@
     "dark",
     "night"
   ],
-  "repository": "https://github.com/atom/after-dark-syntax",
+  "repository": "https://github.com/sssmi/after-dark-syntax",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
