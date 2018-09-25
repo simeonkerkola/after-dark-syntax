@@ -1,0 +1,18 @@
+{
+  "name": "after-dark-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "Theme for your eyes ✨",
+  "keywords": [
+    "syntax",
+    "theme",
+    "after dark",
+    "dark",
+    "night"
+  ],
+  "repository": "https://github.com/atom/after-dark-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

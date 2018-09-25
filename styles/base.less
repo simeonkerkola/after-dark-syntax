@@ -1,0 +1,369 @@
+@import "syntax-variables";
+
+atom-text-editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @soft-white;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+}
+
+
+// Syntax styles
+
+.syntax--comment {
+  color: @dark-violet;
+}
+
+.syntax--keyword {
+  color: @purple;
+
+  &.syntax--control,
+  &.syntax--operator.syntax--assignment {
+    color: @purple;
+  }
+
+  &.syntax--operator {
+    color: @metal;
+  }
+
+  &.syntax--other.syntax--special-method {
+    color: @blue;
+  }
+
+  &.syntax--other.syntax--unit {
+    color: @orange;
+  }
+}
+
+.syntax--storage {
+  color: @purple;
+}
+
+.syntax--constant {
+  color: @yellow;
+
+  &.syntax--character.syntax--escape {
+    color: @cyan;
+  }
+
+  &.syntax--numeric {
+    color: @orange;
+  }
+
+  &.syntax--other.syntax--color {
+    color: @cyan;
+  }
+
+  &.syntax--other.syntax--symbol {
+    color: #f00;
+  }
+}
+
+.syntax--variable {
+  color: @blue;
+
+  &.syntax--interpolation {
+    color: darken(@red, 10%);
+  }
+
+  &.syntax--parameter.syntax--function {
+    color: @syntax-text-color;
+  }
+  &.syntax--constant {
+    color: @yellow;
+  }
+}
+
+.syntax--invalid.syntax--illegal {
+  color: @red;
+  background-color: @syntax-background-color;
+}
+
+.syntax--string {
+  color: @green;
+
+  &.syntax--unquoted {
+    color: @orange;
+  }
+
+
+  &.syntax--regexp {
+    color: @cyan;
+
+    .syntax--source.syntax--ruby.syntax--embedded {
+      color: @orange;
+    }
+  }
+
+  &.syntax--other.syntax--link {
+    color: @cyan;
+  }
+}
+
+.syntax--punctuation {
+  &.syntax--definition {
+    &.syntax--comment {
+      color: @dark-violet;
+    }
+
+    &.syntax--string,
+    &.syntax--variable,
+    &.syntax--parameters,
+    &.syntax--array {
+      color: @metal;
+    }
+
+    &.syntax--heading,
+    &.syntax--identity {
+      color: @blue;
+    }
+
+    &.syntax--bold {
+      color: @yellow;
+      font-weight: bold;
+    }
+
+    &.syntax--italic {
+      color: @purple;
+      font-style: italic;
+    }
+  }
+
+  &.syntax--section.syntax--embedded {
+    color: @blue;
+  }
+  &.syntax--terminator,
+  &.syntax--definition.syntax--tag {
+    color: @metal;
+  }
+
+}
+
+.syntax--support {
+  &.syntax--class {
+    color: @yellow;
+  }
+
+  &.syntax--function  {
+    color: @cyan;
+
+    &.syntax--any-method {
+      color: @blue;
+    }
+  }
+}
+
+.syntax--entity {
+  &.syntax--name.syntax--function {
+    color: @cyan;
+  }
+  &.syntax--name.syntax--type {
+    color: @yellow;
+    text-decoration: underline
+  }
+
+  &.syntax--other.syntax--inherited-class {
+    color: @green;
+  }
+  &.syntax--name.syntax--class, &.syntax--name.syntax--type.syntax--class {
+    color: @yellow;
+  }
+
+  &.syntax--name.syntax--section {
+    color: @white;
+  }
+
+  &.syntax--name.syntax--tag {
+    color: @cyan;
+    text-decoration: none;
+  }
+
+  &.syntax--other.syntax--attribute-name {
+    color: @orange;
+    font-style: italic;
+
+    &.syntax--id {
+      color: @blue;
+    }
+  }
+}
+
+.syntax--meta {
+  &.syntax--class {
+    color: @white;
+  }
+
+  &.syntax--link {
+    color: @dark-violet;
+  }
+
+  &.syntax--require {
+    color: @purple;
+  }
+
+  &.syntax--selector {
+    color: @purple;
+  }
+
+  &.syntax--separator {
+    background-color: @gray;
+    color: @syntax-text-color;
+  }
+}
+
+.syntax--none {
+  color: @syntax-text-color;
+}
+
+.syntax--markup {
+  &.syntax--bold {
+    color: @orange;
+    font-weight: bold;
+  }
+
+  &.syntax--changed {
+    color: @purple;
+  }
+
+  &.syntax--deleted {
+    color: @red;
+  }
+
+  &.syntax--italic {
+    color: @purple;
+    font-style: italic;
+  }
+
+  &.syntax--heading .syntax--punctuation.syntax--definition.syntax--heading {
+    color: @blue;
+  }
+
+  &.syntax--inserted {
+    color: @green;
+  }
+
+  &.syntax--list {
+    color: @red;
+  }
+
+  &.syntax--quote {
+    color: @orange;
+  }
+
+  &.syntax--raw.syntax--inline {
+    color: @green;
+  }
+}
+
+.syntax--source.syntax--gfm .syntax--markup {
+  -webkit-font-smoothing: auto;
+  &.syntax--heading {
+    color: @green;
+  }
+}
+
+////////////////////////
+.syntax--keyword.syntax--operator.syntax--of {
+  color: @purple;
+}
+
+.syntax--meta.syntax--brace,
+.syntax--punctuation.syntax--definition.syntax--modules,
+.syntax--separator,
+.syntax--section.syntax--property-list.syntax--bracket,
+.syntax--punctuation.syntax--section.syntax--class,
+.syntax--punctuation.syntax--definition.syntax--block,
+.syntax--delimiter {
+  color: @metal;
+}
+
+
+// css
+.syntax--attribute-name.syntax--class.syntax--css {
+  color: @yellow;
+}
+.syntax--property-name.syntax--css {
+  color: @blue;
+}
+.syntax--support.syntax--constant.syntax--property-value.syntax--css,
+.syntax--support.syntax--constant.syntax--color.syntax--w3c-standard-color-name.syntax--css {
+  color: @white;
+}
+.syntax--meta.syntax--property-value.syntax--scss {
+  color: @metal;
+}
+
+.syntax--this {
+  color: @red;
+  font-style: italic;
+}
+.syntax--keyword.syntax--operator.syntax--spread {
+  color: @yellow;
+}
+
+.syntax--keyword.syntax--operator {
+  &.syntax--logical,
+  &.syntax--comparison,
+  &.syntax--relational,
+  &.syntax--arithmetic {
+  color: @purple;
+  }
+}
+
+// Vue
+.syntax--source.syntax--directive.syntax--vue {
+  color: @blue;
+}
+
+
+
+
+// Mini editor
+
+atom-text-editor[mini] .scroll-view {
+  padding-left: 1px;
+}
